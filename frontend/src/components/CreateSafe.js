@@ -43,7 +43,7 @@ const CreateSafe = () => {
     setLoadingFlag(true)
     const data = new FormData(e.target)
     await deployWallet({
-      owners: [account, data.get('owner2'), data.get('owner3')],
+      owners: [account, data.get('owner2').toLowerCase(), data.get('owner3').toLowerCase()],
       threshold: data.get('threshold'),
     })
   }
@@ -122,7 +122,7 @@ const CreateSafe = () => {
                 Create a Multi Signature Wallet
               </h4>
               <h5 className='card-text p-3 fw-bold'>
-                Requirements: *Minimum 1 owner and 1 quorum. *Owners need to be
+                Requirements: *3 owners and 1~3 quorum. *Owners need to be
                 more than or equal to the quorum
               </h5>
 
